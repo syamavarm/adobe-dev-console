@@ -1,0 +1,193 @@
+{
+  "properties": {
+    "connectionParameters": {
+      "clientId": {
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter the client Id.",
+          "displayName": "Client Id \u2013 Create new credentials by visiting https://www.adobe.com/go/powerautomate_getstarted"
+        }
+      },
+      "clientSecret": {
+        "type": "securestring",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter the client secret.",
+          "displayName": "Client Secret"
+        }
+      },
+      "orgId": {
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter your registered organization Id.",
+          "displayName": "Organization Id"
+        }
+      },
+      "ims": {
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter your ims url",
+          "displayName": "IMS URL"
+        }
+      },
+      "metaScopes": {
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter metascopes",
+          "displayName": "MetaScopes"
+        }
+      },
+      "technicalAccountId": {
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter your registered technical account Id.",
+          "displayName": "Technical Account Id"
+        }
+      },
+      "privateKey": {
+        "type": "securestring",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter the base64 encoded private key associated with your credentials.",
+          "displayName": "Base64 Encoded Private Key"
+        }
+      },
+      "aemUrl": {
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "required": "true"
+          },
+          "description": "Please enter your AEM url",
+          "displayName": "AEM URL"
+        }
+      }
+    },
+    "iconBrandColor": "#B30B00",
+    "capabilities": [],
+    "policyTemplateInstances": [
+      {
+        "templateId": "setheader",
+        "title": "SetClientId",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "clientId",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('clientId')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "setheader",
+        "title": "SetClientSecret",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "clientSecret",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('clientSecret')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "setheader",
+        "title": "SetOrgId",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "orgId",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('orgId')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "setheader",
+        "title": "SetIms",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "ims",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('ims')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "setheader",
+        "title": "SetTechnicalAccountId",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "technicalAccountId",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('technicalAccountId')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "setheader",
+        "title": "SetMetaScopes",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "metaScopes",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('metaScopes')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "setheader",
+        "title": "SetPrivateKey",
+        "parameters": {
+          "x-ms-apimTemplateParameter.name": "privateKey",
+          "x-ms-apimTemplateParameter.value": "@connectionParameters('privateKey')",
+          "x-ms-apimTemplateParameter.existsAction": "override",
+          "x-ms-apimTemplate-policySection": "Request",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      },
+      {
+        "templateId": "dynamichosturl",
+        "title": "SetAEMUrl",
+        "parameters": {
+          "x-ms-apimTemplateParameter.urlTemplate": "@connectionParameters('aemUrl')",
+          "x-ms-apimTemplate-operationName": [
+            "GetContentJson"
+          ]
+        }
+      }
+    ],
+    "publisher": "Syama Varma Ramarkovilakam",
+    "stackOwner": "Adobe Inc."
+  }
+}

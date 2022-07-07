@@ -1,0 +1,121 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "AEM Proxy Connector 1",
+    "description": "AEM Connector to provide functionalities of Forms",
+    "version": "1.0.0",
+    "contact": {
+      "name": "AEM Forms Services",
+      "url": "https://www.adobe.com/go/powerautomate_forum"
+    },
+    "x-ms-api-annotation": {
+      "status": "Preview"
+    }
+  },
+  "host": "adobeioruntime.net",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "https://www.adobe.com/go/powerautomate_home"
+    },
+    {
+      "propertyName": "Privacy policy",
+      "propertyValue": "https://www.adobe.com/privacy/policy.html"
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": "Content and Files;Data"
+    }
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/default/test": {},
+    "/content.json": {
+      "get": {
+        "description": "Get Content JSON",
+        "operationId": "GetContentJson",
+        "x-ms-api-annotation": {
+          "status": "Preview",
+          "family": "GetAccessTokenFromJWT",
+          "revision": 1
+        },
+        "x-ms-visibility": "important",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Access Token Successfully Retrieved",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jcr:created": {
+                  "type": "string",
+                  "description": "jcr:created"
+                },
+                "jcr:createdBy": {
+                  "type": "string",
+                  "description": "jcr:createdBy"
+                },
+                "jcr:mixinTypes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "jcr:mixinTypes"
+                },
+                "jcr:primaryType": {
+                  "type": "string",
+                  "description": "jcr:primaryType"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Content JSON",
+        "tags": [
+          "exchangeJWT"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "GetAccessTokenFromJWTResponse": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "x-ms-visibility": "important",
+          "x-ms-summary": "Access Token",
+          "description": "Access Token"
+        },
+        "expires_in": {
+          "type": "integer",
+          "x-ms-visibility": "important",
+          "x-ms-summary": "Expiration Time",
+          "description": "Expiration Time of acces stoken"
+        },
+        "token_type": {
+          "type": "string",
+          "x-ms-visibility": "important",
+          "x-ms-summary": "Token Type",
+          "description": "Token Type"
+        }
+      }
+    }
+  },
+  "tags": [],
+  "security": [],
+  "securityDefinitions": {},
+  "x-ms-capabilities": {
+    "testConnection": {
+      "operationId": "TestConnection",
+      "parameters": {}
+    }
+  }
+}

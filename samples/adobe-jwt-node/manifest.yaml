@@ -1,0 +1,11 @@
+packages:
+  # this is the package name
+  pa:
+    actions:
+      # name of the action
+      jwt:
+        # source for the action; in this case it is a folder
+        function: actions
+        runtime: nodejs:10
+        # publish the action as a web action
+        web:  yes

@@ -1,0 +1,10 @@
+{
+  "connectorId": "shared_aem-20proxy-20connector-201-5f0616e7ee76a0da04--1b25b435707ab460",
+  "environment": "Default-fa7b1b5a-7b34-4387-94ae-d2c178decee1",
+  "apiProperties": "apiProperties.json",
+  "apiDefinition": "apiDefinition.swagger.json",
+  "icon": "icon.png",
+  "powerAppsUrl": "https://api.powerapps.com",
+  "powerAppsApiVersion": "2016-11-01",
+  "script": "script.csx"
+}
